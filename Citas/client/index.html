@@ -1,0 +1,144 @@
+<template name="index">
+    {{>header}}
+    {{>publicidad}}
+    {{>scripts}}
+</template>
+
+<template name="header">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="logo" href="/"><img class="img-fluid" src="imgenes/logo_pkpe.png"></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline my-2 my-lg-0" id="anuncio">
+                    <a class="btn" href="#">publicar Anuncio</a>
+                    <a class="corazon" href="#">
+                        <ion-icon name="heart"></ion-icon>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="amburguesa" data-toggle="dropdown">
+                            <ion-icon name="menu-outline"></ion-icon>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item" href="#">Publicar anuncio</a>
+                                <a class="dropdown-item" href="#">Panel de control</a>
+                                <a class="dropdown-item" href="#">Mis anuncios</a>
+                                <a class="dropdown-item" href="#">Textos legales</a>
+                                <a class="dropdown-item" href="/membresias">Membresias</a>
+                                <a class="dropdown-item" href="#">Contactar</a>
+                            </div>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <div style="background: #ffffff">
+            <div class="container" id="submenu">
+                <div class="row">
+                    <div class=" col-md-6 input-group">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        <div class="form-group">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option> +0km</option>
+                                <option> +10km</option>
+                                <option> +20km</option>
+                                <option> +40km</option>
+                                <option> +60km</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group" style="display: flex;">
+                        <input type="email" class="form-control" placeholder="¿que estas buscando?">
+                        <a href="#" class="btn btn-danger"><i class="fas fa-search"></i> Buscar </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>
+
+
+<template name="publicidad">
+    <section id="publicidade">
+        <div class="ml-5 text-left" id="title">
+            <h2>Kinesiólogas en Perú</h2>
+        </div>
+        <div class="row" id="anuncios">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md">
+                <div class="text-center">
+                    <img class="img-fluid" src="imgenes/58.jpg">
+                    <div class="text-left">
+                        <p>Unas amiguitas muy sabrosas que te haremos pasar momentos realmente ricos.</p>
+                        <samp class="ml-3">Lima metropolitana</samp>
+
+                        <div class="form-inline text-left ml-3">
+                            <samp>19 años</samp> <samp>s/.150</samp>
+                        </div>
+                        <samp class="ml-3">ECUATORIANAS</samp>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="text-center">
+                    <img class="img-fluid" src="imgenes/212.jpg">
+                    <div class="text-left ">
+                        <p>Mujer ardiente y discreta dispuesta a complacerte.</p>
+                        <samp class="ml-3">Lima metropolitana</samp>
+
+                        <div class="form-inline text-left ml-3">
+                            <samp>19 años</samp> <samp>s/.130</samp>
+                        </div>
+                        <samp class="ml-3">Colombianas</samp>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="text-center">
+                    <img class="img-fluid" src="imgenes/9.jpg">
+                    <div class="text-left ">
+                        <p>Hermosa kine, muy complaciente y con la cual disfrutarás al máximo.</p>
+                        <samp class="ml-3">Lima metropolitana</samp>
+
+                        <div class="form-inline text-left ml-3">
+                            <samp>20 años</samp> <samp>s/.200</samp>
+                        </div>
+                        <samp class="ml-3"></samp>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="text-center">
+                    <img class="img-fluid" src="imgenes/17.jpg">
+                    <div class="text-left">
+                        <p>Encantadora jovencita hermosa, sexy y colombiana.</p>
+                        <samp class="ml-3">Lima metropolitana</samp>
+
+                        <div class="form-inline text-left ml-3">
+                            <samp>23 años</samp> <samp>s/.200</samp>
+                        </div>
+                        <samp class="ml-3">COLOMBIANAS</samp>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="text-center">
+                    <img class="img-fluid" src="imgenes/2.jpg">
+                    <div class="text-left ">
+                        <p>Sexy joven de 22 años lista para complacert olivos</p>
+                        <samp class="ml-3">Lima metropolitana</samp>
+                        <div class="form-inline text-left ml-3">
+                            <samp>22 años</samp> <samp>s/.180</samp>
+                        </div>
+                        <samp class="ml-3">ECUATORIANAS</samp>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" container text-center">
+            <button class="btn-red" id="mas">CARGAR MAS</button>
+        </div>
+    </section>
+</template>

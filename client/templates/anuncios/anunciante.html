@@ -1,0 +1,154 @@
+<template name="PerfilAnunciante">
+  {{#with anunciante}}
+  <div class="perfil">
+
+    <!--<div class="swiper-container2">
+      <div class="swiper-wrapper">
+
+      </div>
+    </div> -->
+
+    <div class="galeria">
+      {{#each fotos}}
+
+              {{#if isImage}}
+                <img src="{{this.url}}" alt="{{this.url}}">
+              {{/if}}
+
+      {{/each}}
+    </div>
+
+      <span class="s-anunciante"><i class="fa fa-user" aria-hidden="true"></i> {{this.nombre}}</span>
+    <span class="s-anunciante" style="font-size: 15px">{{this.intereses}}</span>
+    <span class="s-anunciante"><i class="fa fa-map-marker" aria-hidden="true"></i>{{#if this.provincia}} {{this.provincia}} - {{/if}}  {{this.ubicacion}}</span>
+
+    <div class="calificacion">
+       <button class="1">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="2">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="3">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="4">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="5">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="6">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="7">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="8">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="9">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+       <button class="10">
+         <i class="fa fa-star" aria-hidden="true"></i>
+       </button>
+     </div>
+
+     <p>{{this.calificacion}}</p>
+
+    <a href="tel:{{this.telefono}}" class="contacto llamar">Llamar</a>
+    <a href="#" class="contacto sms">SMS</a>
+
+    <button class="favorito" style="display: block; width: 40px; height: 40px; margin: 10px auto; border: none; background-color: transparent; color: rgba(241, 196, 15,1.0); font-size: 35px;">
+        <i class="fa fa-star" aria-hidden="true"></i>
+    </button>
+
+  </div>
+
+  <div class="caracteristicas">
+    <table>
+
+      <tbody>
+        <tr>
+          <td>Género</td>
+          <td>{{this.genero}}</td>
+
+        </tr>
+        <tr>
+
+          <td>Contextura</td>
+          <td>{{this.contextura}}</td>
+        </tr>
+        <tr>
+
+          <td>Color de Piel</td>
+          <td>{{this.piel}}</td>
+        </tr>
+        <tr>
+
+          <td>Color de Cabello</td>
+          <td>{{this.cabello}}</td>
+        </tr>
+        <tr>
+
+          <td>Edad</td>
+          <td>{{this.edad}}</td>
+        </tr>
+       </tbody>
+    </table>
+    <h1>Comentarios</h1>
+     <div class="comentarios">
+       <br>
+       <br>
+       {{#each comentarios}}
+       <div class="comentario">
+
+         <p>
+           <span>{{user}}</span>
+           <a>{{this.comentario}}</a>
+         </p>
+       </div>
+       {{/each}}
+     </div>
+  </div>
+  {{/with}}
+</template>
+
+<template name="calificar">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <input type="text" class="box-comentario" name="comentario" placeholder="¿Por que calificaste con ese puntaje?" style="color: rgba(127, 140, 141,1.0)">
+                    <button type="button" class="comentar">Comentar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="ofertar">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <input type="number" class="box-comentario" name="oferta" placeholder="Con que precios deseas negociar" style="color: rgba(127, 140, 141,1.0)">
+                    <button type="button" class="comentar">Ofertar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="contactoAnunciante">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Contactate a 985623447</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,65 @@
+<template name="Contactos">
+
+  {{#each contactos}}
+
+    <div class="anuncio" style="margin: 20px auto; height: 175px; padding-top: 5px;">
+      <div class="swiper-container" style="height: 97px; margin-bottom: 5px;">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          {{#each fotosDeContacto this.anuncianteId}}
+          <div class="swiper-slide">
+            {{#if isImage}}
+            <img src="{{this.url}}" alt="{{this.url}}" style="width: 95px; height: 95px; margin-top: 2px;">
+            {{/if}}
+          </div>
+          {{/each}}
+      </div>
+      
+      </div>
+
+      <span ><i class="fa fa-user" aria-hidden="true"></i> {{nombreDeContacto this.anuncianteId}}</span>
+      <div class="foot" style="padding-top: 10px;">
+        <a href="tel:+{{telefono this.anuncianteId}}" class="contacto" style="width: 100px; height: 20px; font-size: 12px; color: white; margin-top: 0px;">Llamar</a>
+      </div>
+    </div>
+  {{/each}}
+
+ <!-- <div class="anuncios">
+{{#each contactos}}
+
+    <div class="anuncio" style="height: 255px;">
+
+         <div class="swiper-container">
+    Additional required wrapper
+    <div class="swiper-wrapper">
+
+        {{#each fotosDeContacto}}
+        <div class="swiper-slide">
+          <img src="{{this.url}}" alt="{{this.url}}">
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+
+    <div class="swiper-scrollbar"></div>
+</div>
+      {{#each fotosDeContacto}}
+      <img src="/principal.jpg" style="width: 120px; height: 120px;">
+      {{/each}}
+      <span><i class="fa fa-user" aria-hidden="true"></i> {{nombreDeContacto}}</span>
+
+         <button>Llamar</button>
+
+    </div>
+
+ {{/each}}
+
+
+  </div> -->
+</template>

@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    text-decoration: none;
+    margin: 0;
+    background-color: #F4F4F4;
+    font-family: Arial;
+    font-size: 13px;
+    color: #303030;
+    list-style: none;
+}
+#submenu{
+    background: #ffffff;
+}
+.logo img{
+    height: 36px;
+    margin-top: 5px;
+}
+#anuncio .btn{
+    border: 0;
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    background-color: #CA1E25;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    right: 140px;
+    height: 40px;
+    margin: 5px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.corazon ion-icon{
+    color: #CA1E25;
+    font-size: 42px;
+    cursor: pointer;
+    margin: 5px;
+}
+.amburguesa ion-icon{
+    font-size: 82px;
+    width: 80px;
+    height: 88px;
+    line-height: 42px;
+    overflow: hidden;
+    margin: 0;
+    margin-right: 5px;
+    color: #0072C6;
+}
+.list{
+    display: none; 
+}
+.list a{
+    display: block;
+}
+.amburguesa:hover .list{
+    display: block;
+}
+.bg-light {
+    background-color: #ffffff!important;
+}
+.btn-red{
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #CA1E25;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    right: 140px;
+    height: 40px;
+    margin-left: 5px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 17px;  
+}
+.btn:hover{
+    color: #fff;
+}
+.btn ion-icon{
+    font-size: 30px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.row{
+    width: 100%;
+}
+#anuncios .col-md{
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #E8E8E8;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+}
+.col-md{
+    padding-left: 0px !important;
+    padding-right:  0px !important;
+}
+.col-md p{
+    display: block;
+    font-size: 15px;
+    line-height: 19px;
+    padding: 6px 9px 6px 9px;
+    color: #303030;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+.col-md samp{
+    color: #303030;
+    background-color: #E8E9E9;
+    cursor: default;
+    display: inline-block;
+    font-size: 13px;
+    font-family: Verdana;
+    white-space: nowrap;
+    padding: 4px 8px 5px 8px;
+    border-radius: 3px;
+    color: #2A5279;
+    background-color: #DEF2FC;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 2px 2px 3px 3px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    max-width: calc(100% - 6px);
+    max-width: 182px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+#title h2{
+    font-size: 22px;
+    margin: 0 0 10px 10px;
+    color: #707070;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+#mas{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#anuncio ul li{
+    display: none;
+}
+.dropdown-menu{
+    margin-top: -29% !important;
+    margin-left: -101px !important;
+    padding: 20px !important;
+}
+.dropdown-menu a{
+    color: #000000 !important;
+    padding: 5px;
+    padding-left: 13px;
+    text-decoration: none;
+    padding-right: 13px;
+}
+.dropdown-menu a:hover{
+    color:#ffffff !important;
+    background-color: #CA1E25;
+    text-decoration: none;
+    
+}
+@media screen and (max-width: 640px) and (min-width: 360px) {
+    .col-md{
+        width: 48%;
+    }
+    .cel{
+        display:flex;
+        width: 100%;
+        margin-left: 15px;
+    }
+    #anuncios .col-md{
+        margin: 3px;
+    }
+    .row{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        width: auto;
+    }
+    .ml-3, .mx-3 {
+        margin-left: 0.1rem!important;
+    }
+    .collapse:not(.show) {
+        display: block;
+    }
+    #anuncio .btn{
+        display: none;
+    }
+    .logo img {
+        height: 28px;
+    }
+    .amburguesa ion-icon {
+        width: 59px;
+        height: 64px;
+    }
+    #anuncio{
+        margin-left: 64%;
+        margin-top: -40px !important;
+    }
+    .dropdown-menu a {
+        top: 72%;
+        left: -79px;
+        color: #000000 !important;
+    }
+    .dropdown-menu a{
+        margin-left: 5px !important;
+        padding: 20px 3px !important;
+    }
+}

@@ -1,0 +1,207 @@
+<template name="Admin">
+  {{#if currentUser}}
+    {{#if isInRole 'admin' 'default-group'}}
+      {{> menu}}
+      {{> Template.dynamic template=administrador}}
+    {{/if}}
+  {{else}}
+    {{> loginAdmin}}
+  {{/if}}
+</template>
+
+<template name="AdminVentas">
+  {{#if currentUser}}
+    {{#if isInRole 'vendedor' 'app'}}
+      {{> menuVenta}}
+      {{> Template.dynamic template=ventas}}
+    {{/if}}
+  {{else}}
+    {{> loginAdmin}}
+  {{/if}}
+</template>
+
+<template name="menuVenta">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SinCompromiso.pe</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/vendedores">Productos</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="salir"><a href="#">Salir</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</template>
+
+<template name="AdminProductos">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Agregar producto</h2>
+    <form>
+      
+      <div class="form-group">
+        <label for="titulo">Nombre de producto</label>
+        <input type="text" name="titulo" class="form-control" id="titulo">
+      </div>
+
+       <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" name="descripcion" class="form-control" id="descripcion">
+      </div>
+
+      <div class="form-group">
+        <label class="btn btn-default btn-file">
+          Subir foto <input type="file" id="foto" style="display: none;">
+        </label>
+      </div>
+     
+      <div class="form-group">
+        <label for="Precio">Precio</label>
+        <input type="number" name="precio" class="form-control" id="precio">
+      </div>
+      
+      <button type="submit" class="btn btn-default">Agregar producto</button>
+    </form>
+      </div>
+    </div>
+    
+    <div class="row">
+      <h2>Productos</h2>
+      <p>Lista de productos registrados</p>
+       <table style="border-bottom-color: white;" class="table">
+    <thead>
+      <tr>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Nombre</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Descripción</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each productos}}
+      <tr>
+        <td style="padding: 5px">{{this.nombre}}</td>
+        <td style="padding: 5px">{{this.descripcion}}</td>
+        <td style="padding: 5px">{{this.precio}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>  
+    </div>
+  </div>
+</template>
+
+<template name="AdministradorPublicidad">
+  <div class="container">
+    <div class="row">
+      <h2>Banners de publicidad</h2>
+      <form>
+        <div class="form-group">
+          <label for="url">URL</label>
+          <input type="text" name="url" class="form-control" id="url">
+        </div>
+        <div class="form-control">
+          <label class="btn btn-default btn-file">
+            Cargar banner <input type="file" id="banner" style="display: none;">
+          </label>
+          <br>
+        </div>
+        <button type="text" class="btn btn-default subir">Subir</button>
+      </form>
+    </div>
+
+    <div class="row">
+      <h2>Banners</h2>
+      <p>lista de banners</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Preview</th>
+        <th>URL</th>
+        <th>Clicks</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {{#each banners}}
+      <tr>
+        <td>
+          <img src="{{this.url}}" style="width: 100px; height: 100px;">
+        </td>
+        <td>{{this.metadata.url}}</td>
+        <td>{{this.metadata.clicks}}</td>
+        <td><button class="btn btn-default e">Eliminar</button></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+    </div>
+  </div>
+</template>
+
+<template name="loginAdmin">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <div class="form-group">
+            <label for="usr">Email:</label>
+            <input type="email" name="email" class="form-control" id="usr">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" name="password" class="form-control" id="pwd">
+          </div>
+          <button type="submit" class="btn btn-default">Ingresar</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="AdministradorReportes">
+  <div class="container">
+    <div class="row">
+      <h2>Seguridad</h2>
+      <p>Lista de usuarios que han hecho uso del boton de panico</p>
+
+       <table class="table">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Coordenadas</th>
+        <th>Lugar</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {{#each panico}}
+      <tr>
+        
+        <td>{{this.usuario}}</td>
+        <td>{{this.lat}} , {{this.long}} </td>
+        <td> {{this.lugar}} </td>
+        <td> {{f this.fecha}} </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+    </div>
+  </div>
+</template>

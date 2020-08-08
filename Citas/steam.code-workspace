@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../steam"
+		},
+		{
+			"path": "../../wepayu"
+		},
+		{
+			"path": "../panel"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

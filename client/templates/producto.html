@@ -1,0 +1,112 @@
+<template name="producto">
+
+  {{#with producto}}
+  <div class="perfil">
+    <div class="galeria">
+      {{#each fotos}}
+
+              {{#if isImage}}
+                <img src="{{this.url}}" alt="{{this.url}}">
+              {{/if}}
+
+      {{/each}}
+    </div>
+
+    <span class="s-anunciante"><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{this.nombre}}</span>
+    <div class="calificacion">
+      <button class="1">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="2">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="3">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="4">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="5">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="6">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="7">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="8">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="9">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+      <button class="10">
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <p>{{this.calificacion}}</p>
+
+    <a class="contacto" href="tel:{{telefonoc this.tiendaId}}">Comprar</a>
+
+  </div>
+
+  <div class="caracteristicas">
+    <table>
+
+      <tbody>
+        <tr>
+          <td>Descripción</td>
+          <td>{{this.descripcion}}</td>
+
+        </tr>
+        <tr>
+
+          <td>Precio</td>
+          <td>{{this.precio}}</td>
+        </tr>
+       </tbody>
+    </table>
+    <h1>Comentarios</h1>
+    <div class="comentarios">
+      <br>
+      <br>
+      {{#each comentarios}}
+      <div class="comentario">
+        <p>
+          <span>{{username}}</span>
+          <a>{{this.comentario}}</a>
+        </p>
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+  {{/with}}
+</template>
+
+<template name="calificarProducto">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <input type="text" style="color: black" class="box-comentario" name="comentario" placeholder="¿Por que calificaste con ese puntaje?">
+                    <button type="button" class="comentar">Comentar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="contactar">
+  <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4>Comunicate a : mq@morangesoft.com o al telefono: 990148228</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

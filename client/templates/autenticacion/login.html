@@ -1,0 +1,146 @@
+<template name="login">
+
+      <div class="contenedor">
+        <div class="wrapper">
+
+        <!--  <div class="formulario">
+
+              <div class="marketing">
+                <img src="/logo2.png" alt="logo">
+              </div>
+                    <input type="button" style="background-color: #4862A3" class="boton ingresar" value="Ingresar con Facebook">
+                    <p>¿Eres anunciante? <a href="/signup">Regístrate</a> o <a href="/login">Ingresa</a> </p>
+
+          </div> -->
+          <div class="formulario" style="padding-top: 2px;">
+            <div class="marketing">
+              <img src="/logo2.png" alt="logo">
+            </div>
+              <div class="search ">
+                <span data-icon="f" class="icon"></span>
+                <input name="email" placeholder="Email" type="email">
+              </div>
+
+              <div class="search ">
+                <span data-icon="f" class="icon"></span>
+                <input name="edad" placeholder="Edad" type="number">
+              </div>
+
+              <div class="search ">
+                <span data-icon="9" class="icon"></span>
+                <input name="password" type="password" placeholder="Contraseña">
+              </div>
+              <p style="font-size: 10px;">Al registrarte estas aceptando nuestros <a href="/t">terminos y condiciones</a> y <a href="/p">políticas de privacidad</a> </p>
+              <input type="button" class="boton ingresar" value="Registrarse">
+
+              <p>¿Ya tienes una cuenta? <a href="/login">Ingresa</a></p>
+              <p><a href="/forgotpassword">Olvide mi contraseña</a></p>
+          </div>
+        </div>
+      </div>
+
+</template>
+
+
+<template name="forgotpassword">
+
+      <div class="contenedor">
+        <div class="wrapper">
+
+        <!--  <div class="formulario">
+
+              <div class="marketing">
+                <img src="/logo2.png" alt="logo">
+              </div>
+                    <input type="button" style="background-color: #4862A3" class="boton ingresar" value="Ingresar con Facebook">
+                    <p>¿Eres anunciante? <a href="/signup">Regístrate</a> o <a href="/login">Ingresa</a> </p>
+
+          </div> -->
+          <div class="formulario" style="padding-top: 2px;">
+              <div class="marketing">
+                <img src="/logo2.png" alt="logo">
+              </div>
+
+              <div class="search ">
+                <span data-icon="f" class="icon"></span>
+                <input name="email" placeholder="Email" type="email">
+              </div>
+
+              <p style="font-size: 10px;">Al registrarte estas aceptando nuestros <a href="/t">terminos y condiciones</a> y <a href="/p">políticas de privacidad</a> </p>
+              <input type="button" class="boton ingresar" value="Recupera contraseña">
+
+              <p>¿Ya tienes una cuenta? <a href="/login">Ingresa</a></p>
+          </div>
+        </div>
+      </div>
+
+</template>
+
+
+<template name="loginAnunciante">
+
+  <div class="contenedor">
+    <div class="wrapper">
+
+      <div class="formulario">
+
+          <div class="marketing">
+            <img src="/logo2.png" alt="logo">
+          </div>
+
+         <div class="search">
+            <span data-icon="f" class="icon"></span>
+            <input name="usuario"  placeholder="Email">
+          </div>
+          <div class="search ">
+            <span data-icon="9" class="icon"></span>
+            <input name="password" type="password" placeholder="Contraseña">
+          </div>
+
+
+
+
+
+
+                <input type="button" style="background-color: #4862A3" class="boton ingresar" value="Ingresar">
+                <p>¿Eres cliente? <a href="/">Regístrate</a> o <a href="/">Ingresa</a> </p>
+
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<template name="Verificar">
+  <div class="menu2">
+    <a href="/#" style="color: white">
+    <span style="color: white">Verifica tu Cuenta</span></a>
+  </div>
+  <div class="caracteristicas" style="padding: 15px;">
+    <div class="form-group">
+      <label for="user">Nombre de Usuario</label>
+      <input type="text" class="form-control" id="user" name="user">
+    </div>
+    <div class="form-group">
+      <label for="celular">Celular</label>
+      <input type="number" class="form-control" id="celular" name="celular">
+    </div>
+
+    <input type="button" class="boton ingresar sms" value="Enviar SMS">
+
+  </div>
+</template>
+
+<template name="codigo">
+  <div class="menu2">
+    <a href="/#" style="color: white">
+    <span style="color: white">Verifica tu Cuenta</span></a>
+  </div>
+  <div class="caracteristicas" style="padding: 15px;">
+    <div class="form-group">
+      <label for="codigo">Ingrese el código de verificación</label>
+      <input type="number" class="form-control" id="codigo" name="codigo">
+    </div>
+    <input type="button" style="background-color: white; border: 2px solid #9b59b6;" class="boton ingresar v" value="Verificar">
+  </div>
+</template>

@@ -1,0 +1,14 @@
+<template name="paquetes">
+
+  {{#with users}}
+  <div class="perfil">
+    <div class="galeria">
+      {{#each nombre}}
+            
+            <h2>{{this.nombre}}</h2>
+
+      {{/each}}
+    </div>
+  </div>
+ {{/with}}
+</template>

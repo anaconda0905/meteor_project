@@ -1,0 +1,111 @@
+<template name="Ventas">
+
+    {{#if currentUser}}
+
+      {{#if isInRole 'vendedor' 'app'}}
+
+        {{>menuVentas}}
+        {{> Template.dynamic template=ventas}}
+
+      {{/if}}
+
+    {{else}}
+
+    <h1>Vendedores</h1>
+  <div class="container">
+    <div class="col-md-8">
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Contraseña:</label>
+          <input type="password" name="password" class="form-control" id="pwd">
+        </div>
+        <button type="submit" class="btn btn-default">Ingresar</button>
+      </form>
+    </div>
+    </div>
+
+    {{/if}}
+
+</template>
+
+<template name="menuVentas">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SinCompromiso.pe - Vendedores</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Productos</a></li>
+
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="salir"><a href="#">Salir</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<template name="adminVentas">
+  <div class="container">
+  <h2>Productos</h2>
+  <p>Crea productos y visualiza tus productos existentes</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Fotos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="titulo" placeholder="titulo"></td>
+        <td><input type="text" name="descripcion" placeholder="descripcion"></td>
+        <td><input type="text" name="precio" placeholder="precio"></td>
+        <td>
+          <button type="button" id="guardar">Guardar</button>
+        </td>
+
+      </tr>
+      {{#each productos}}
+      <tr>
+        <td><input type="text" class="t{{this._id}}" name="titulo" value="{{this.titulo}}"></td>
+        <td><input type="text" class="d{{this._id}}" name="desc" value="{{this.descripcion}}"></td>
+        <td><input type="text" class="p{{this._id}}" value="{{this.precio}}"></td>
+        <td>
+          <label class="btn btn-default btn-file">
+            Subir foto   <input type="file" id="foto{{this._id}}" class="fotos" name="foto{{this._id}}">
+          </label>
+
+
+          <button type="button" class="btn btn-primary edit">Editar</button>
+          <button type="button" class="btn btn-danger remove">x</button>
+          <br>
+          {{#each fotos}}
+            <img src="{{this.url}}" style="width: 50px; height: 50px; border-radius: 70%"><button type="button" class="remove-foto" name="button">x</button>
+            <br>
+          {{/each}}
+        </td>
+
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+</template>

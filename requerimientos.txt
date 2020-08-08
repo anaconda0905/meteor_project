@@ -1,0 +1,24 @@
+Requerimientos:
+1. Crear un nuevo tipo de usuario que sea dueño de local
+2. Este usuario podra publicar:	
+	2.1 Maximo 10 imagenes de su producto
+	2.2 Precio
+	2.3 Descripcion
+	2.4 Calificar el producto
+	2.5 Preguntar
+	2.6 Boton comprar -> enviar sms al dueño del local diciendo que se contacto con la persona para concretar la venta 
+3. Crear administrador web para dueño de local
+	3.1 El usuario podra poner su direccion y mostrarlo en un mapa 
+4. Crear perfil para tienda
+	4.1 Calificar tienda
+	4.2 Ver lista de productos de la tienda
+	4.3 Mostrar logo de la tienda
+	4.4 Mostrar ubicacion de la tienda 
+	4.5 Mostrar mapa de google maps
+	4.6 Mostrar la cantidad de ventas concretadas
+5. El usuario podra poner si compro el producto o no
+6. La app tendra un mapa general de la ubicacion de las tiendas
+7. Poner filtro de locales por distrito y tipo de producto
+8. Dar funcionalidad de ofertar el producto
+9. Que tanto el usuario como el comprador puedan calificarse.
+10. El usuario dueño de local puedan contactarse por medio de un formulario.

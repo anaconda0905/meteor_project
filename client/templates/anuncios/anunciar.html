@@ -1,0 +1,84 @@
+<template name="Anunciar">
+  {{#if currentUser}}
+  <div class="menu" style="height: 97px;">
+    <i class="fa fa-bars abrir" aria-hidden="true"></i>
+    <div class="lista">
+      <a href="/anuncios" class="seleccionado" style="width: 160px; margin-top: 18px;">Regresar</a>
+    </div>
+  </div>
+
+  <div class="sidebar {{mostrar}}">
+  <div class="back" style="background: rgba(104, 16, 255, 0.4)">
+    <i class="fa fa-times cerrar" aria-hidden="true"></i>
+    <br>
+    <br>
+    <br>
+    <div class="sidebar-lista">
+      <button class="anunciar"><a href="/anuncios">Anuncios</a></button>
+      
+      <button class="anunciar t"><a href="/productos">Tiendas</a></button>
+      <button class="anunciar a"><a href="/anunciar">Anunciar</a></button>
+      <button class="anunciar logout"><a href="/#">Logout</a></button>
+    </div>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="wrapper">
+
+      <div class="formulario" style="padding-top: 75px;">
+
+          <div class="search ">
+            <span data-icon="f" class="icon"></span>
+            <input name="nombre" type="text"  placeholder="Nombre de la persona a contactar">
+          </div>
+          <div class="search ">
+            <span data-icon="f" class="icon"></span>
+            <input name="cel" type="number" placeholder="Número de contacto">
+          </div>
+          <div class="search ">
+            <span data-icon="9" class="icon"></span>
+            <select name="tipo" id="tipo">
+              <option value="vender">Vender</option>
+              <option value="anunciar">Anunciar</option>
+            </select>
+
+          </div>
+          <input type="button" class="boton ingresar" value="Solicitar">
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="cuenta">
+  <div class="menu2">
+    <a href="/anuncios" style="color: white"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <span style="color: white">Mi Cuenta</span></a>
+  </div>
+  <div class="caracteristicas" style="width: 80%; margin: 20px auto;">
+    <br><br>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" value="{{currentUser.profile.nombre}}" class="form-control" id="nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="text" class="form-control" value="{{currentUser.profile.edad}}" id="edad" name="edad">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="number" value="{{currentUser.profile.phoneNumber}}" class="form-control"
+        id="telefono" name="telefono">
+      </div>
+      <div class="form-group">
+        <label for="telefonoc">Teléfono de Conocido</label>
+        <input type="number"
+        value="{{currentUser.profile.telefonoDeConocido}}"
+        class="form-control" id="telefonoc" name="telefonoc">
+      </div>
+      <input class="contacto guardar" style="text-align: center;" value="Guardar">
+    </form>
+  </div>
+</template>

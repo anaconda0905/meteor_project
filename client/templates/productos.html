@@ -1,0 +1,164 @@
+<template name="productos">
+  <div class="anuncios">
+  <div class="form-group" style="width: 80%;">
+    <input placeholder="Busca por ejem: nombre, precio, tienda" type="text" class="form-control"  name="search" >
+  </div>
+
+  {{#if searching}}
+      <h2>Cargando...</h2>
+  {{else}}
+
+  {{#each productos}}
+
+    <div class="anuncio" style="height: 200px;">
+      <div class="swiper-container" style="height: 97px;">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          {{#each foto}}
+          <div class="swiper-slide">
+            {{#if isImage}}
+            <img src="{{this.url}}" alt="{{this.url}}" style="width: 95px; height: 95px; margin-top: 2px;">
+            {{/if}}
+          </div>
+          {{/each}}
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+      </div>
+      <span><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{this.titulo}}</span>
+      <span><i class="fa fa-star" aria-hidden="true"></i> {{this.descripcion}}</span>
+      <div class="foot">
+
+        <span style="width: 90px;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> S/{{this.precio}}</span>
+        <span><i class="fa fa-comment" aria-hidden="true"></i> {{comentarios}}</span>
+      </div>
+    </div>
+    <br>
+  {{else}}
+    <h2 style="width: 80%; margin: 5px auto; text-align: center">Cargando...</h2>
+  {{/each}}
+  {{/if}}
+
+  </div>
+</template>
+
+<template name="tiendas">
+  <div class="anuncios">
+  <div class="form-group" style="width: 80%;">
+    <input placeholder="Busca por ejem: nombre, tipo y zona" type="text" class="form-control"  name="search" >
+  </div>
+
+  {{#if searching}}
+      <h2>Cargando...</h2>
+  {{else}}
+  {{#each tiendas}}
+
+    <div class="anuncio" style="padding-top: 20px; height: 210px">
+      {{#each fotos}}
+
+        <a href="/tiendas/{{this.metadata.tiendId}}">
+            <img src="{{this.url}}" class="nombre" style="padding: 0">
+        </a>
+
+      {{else}}
+        <a class="nombre" href="/tiendas/{{this._id}}" style="color: white;">T</a>
+      {{/each}}
+      <span><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{this.nombre}}</span>
+      <div class="foot">
+        <span><i class="fa fa-product-hunt" aria-hidden="true"></i> {{productos this._id}}</span>
+      </div>
+    </div>
+  {{else}}
+    <h2 style="width: 80%; margin: 5px auto; text-align: center">Cargando...</h2>
+  {{/each}}
+  {{/if}}
+  </div>
+</template>
+
+<template name="tienda">
+  <div class="menu2">
+    <a href="/productos" style="color: white"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <span style="color: white">Tienda {{nombre}}</span></a>
+  </div>
+  <div class="caracteristicas">
+    <table>
+      {{#with tienda}}
+      <tbody>
+        <tr>
+          <td>Rubro</td>
+          <td>{{this.rubro}}</td>
+
+        </tr>
+        <tr>
+
+          <td>Telefono</td>
+          <td>{{this.telefono}}</td>
+        </tr>
+        <tr>
+
+          <td>Horario de Atencion</td>
+          <td>{{this.horario}}</td>
+        </tr>
+
+        <tr>
+          <td>Distrito</td>
+          <td>{{this.ubicacion}}</td>
+        </tr>
+
+        <tr>
+          <td>Provincia</td>
+          <td>{{this.provincia}}</td>
+        </tr>
+
+        <tr>
+          <td class="perfil" style="width:auto;border:none;"> <a href="tel:{{this.telefono}}" class="contacto llamar">Llamar</a> </td>
+          <td class="perfil" style="width:auto;border:none;"> <a href="#" class="contacto sms">SMS</a> </td>
+        </tr>
+
+       </tbody>
+       {{/with}}
+    </table>
+  </div>
+  <br>
+   <div class="anuncios">
+  {{#each productos}}
+
+    <div class="anuncio" style="padding-top: 20px; height: 210px">
+      <div class="swiper-container" style="height: 123px">
+        <div class="swiper-wrapper">
+            {{#each fotos}}
+            <div class="swiper-slide" >
+              <a  href="/productos/{{this.metadata.tiendaId}}" style="color: white;">
+              <img src="{{this.url}}" style="margin-top: 0px;
+    width: 125px;
+    height: 125px;
+"  alt="{{this.url}}"></a>
+            </div>
+            {{else}}
+            <div class="swiper-slide">
+              <a class="nombre" href="/productos/{{this._id}}" style="color: white;"></a>
+            </div>
+            {{/each}}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <span><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{this.nombre}}</span>
+      <div class="foot">
+        <span style="width: 195px">S/ {{this.precio}}</span>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</template>

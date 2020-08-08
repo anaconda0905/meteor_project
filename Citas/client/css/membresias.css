@@ -1,0 +1,24 @@
+.title-membership{
+    font-size: 28px;
+    font-weight: 700;
+    border-bottom: 1px solid red;
+}
+
+.price-membership{
+    font-size: 18px;
+}
+
+.card-membership{
+    border: 1px solid red;
+    box-shadow: 1px 1px 15px red;
+    border-radius: 15px;
+}
+
+.detail-membership{
+    font-size: 12px;
+}
+
+.detail-membership li{
+    list-style: none;
+}
+

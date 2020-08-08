@@ -1,0 +1,15 @@
+{
+  "name": "links",
+  "private": true,
+  "scripts": {
+    "start": "meteor --settings settings.json",
+    "deploy": "meteor deploy --settings settings.json trade-steam.meteorapp.com"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.2",
+    "jquery": "^2.2.4",
+    "jquery-zoom": "^1.7.18",
+    "meteor-node-stubs": "~0.2.0"
+  }
+}

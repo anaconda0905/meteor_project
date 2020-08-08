@@ -1,0 +1,624 @@
+<template name="Administrador">
+
+  {{>AdministradorAnuncios}}
+
+</template>
+
+<template name="menu">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SinCompromiso.pe</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/admin">Anuncios</a></li>
+
+          <li><a href="/admin/usuarios">Usuarios</a></li>
+          <li><a href="/admin/publicidad">Publicidad</a></li>
+          <li><a href="/admin/reportes">Reportes</a></li>
+          <li><a href="/admin/contratos">Contratos</a></li>
+          <li><a href="/admin/comentarios">Comentarios</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="salir"><a href="#">Salir</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+</template>
+
+<template name="AgregarTienda">
+  <div class="col-md-6">
+    <h2>Agregar tienda</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="tienda">Nombre de la tienda</label>
+        <input type="text" name="tienda" class="form-control" id="tienda">
+      </div>
+      <div class="form-group">
+        <label for="rubro">Rubro</label>
+          <select class="form-control" id="rubro">
+            <option>Ropa / lenceria </option>
+            <option>Articulos</option>
+            <option>Otros</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="distrito">Distrito</label>
+        <select class="form-control" id="distritotienda">
+            <option>Ancón</option>
+            <option>Ate</option>
+            <option>Barranco</option>
+            <option>Breña</option>
+            <option>Carabayllo</option>
+            <option>Chaclacayo</option>
+            <option>Chorrillos</option>
+            <option>Cieneguilla</option>
+            <option>Comas</option>
+            <option>El Agustino</option>
+            <option>Independencia</option>
+            <option>Jesús María</option>
+            <option>La Molina</option>
+            <option>La Victoria</option>
+            <option>Lima</option>
+            <option>Lince</option>
+            <option>Los Olivos</option>
+            <option>San Juan de Lurigancho</option>
+            <option>Lurín</option>
+            <option>Magdalena del Mar</option>
+            <option>Miraflores</option>
+            <option>Pachacamac</option>
+            <option>Pucusana</option>
+            <option>Pueblo Libre</option>
+            <option>Puente Piedra</option>
+            <option>Rímac</option>
+            <option>San Borja </option>
+            <option>San Isidro</option>
+            <option>San Juan de Miraflores</option>
+            <option>San Martín de Porres</option>
+            <option>San Miguel</option>
+            <option>Santa Anita</option>
+            <option>Santiago de Surco</option>
+            <option>Santa Rosa</option>
+            <option>Surquillo</option>
+            <option>Villa El Salvador</option>
+            <option>Villa María del Triunfo</option>
+            <option>Multiples</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pro">Provincia</label>
+        <select class="form-control" id="provinciat">
+           <option>Lima</option>
+           <option>Callao</option>
+           <option>Amazonas</option>
+           <option>Áncash</option>
+           <option>Apurímac</option>
+           <option>Arequipa</option>
+           <option>Ayacucho</option>
+           <option>Cajamarca</option>
+           <option>Huancavelica</option>
+           <option>Cusco</option>
+           <option>Huánuco</option>
+           <option>Ica</option>
+           <option>Junín</option>
+           <option>Lambayeque</option>
+           <option>Tacna</option>
+           <option>Piura</option>
+           <option>Puno</option>
+           <option>Loreto</option>
+           <option>Ucayali</option>
+           <option>Madre de Dios</option>
+           <option>Moquegua</option>
+           <option>Pasco</option>
+       </select>
+      </div>
+      <div class="form-group">
+        <label for="telefonotienda">Teléfono</label>
+        <input type="text" name="telefonotienda" class="form-control" id="telefonotienda">
+      </div>
+      <div class="form-group">
+        <label for="horario">Horario de atención</label>
+        <input type="text" name="horario" class="form-control" id="horario">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contraseña:</label>
+        <input type="password" name="password" class="form-control" id="pwd">
+      </div>
+      <button type="submit" class="btn btn-default">Agregar tienda</button>
+    </form>
+    <br>
+
+  </div>
+</template>
+
+<template name="AdministradorAnuncios">
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <h2>Agregar anunciante</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" name="nombre" class="form-control" id="nombre">
+      </div>
+      <div class="form-group">
+        <label for="telefono">Téléfono</label>
+        <input type="text" name="telefono" class="form-control" id="telefono">
+      </div>
+      <div class="form-group">
+        <label for="piel">Color de piel</label>
+          <select class="form-control" id="piel">
+            <option>Blanca</option>
+            <option>Trigueña </option>
+            <option>Morena</option>
+            <option>Negra</option>
+          </select>
+      </div>
+       <div class="form-group">
+        <label for="intereses">Descripción</label>
+        <input type="text" name="intereses" class="form-control" id="intereses">
+      </div>
+       <div class="form-group">
+        <label for="genero">Género</label>
+          <select class="form-control" id="genero">
+            <option>Mujer</option>
+            <option>Hombre </option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" class="form-control" id="edad">
+      </div>
+       <div class="form-group">
+         <label for="cabello">Color de cabello</label>
+          <select class="form-control" id="cabello">
+            <option>Rubio</option>
+            <option>Castaño</option>
+            <option>Negro</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="contextura">Contextura</label>
+        <select class="form-control" id="contextura">
+            <option>Delgada</option>
+            <option>Fitness</option>
+            <option>Voluptuosa</option>
+            <option>Rellenita</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="provincia">Provincia</label>
+         <select class="form-control" id="provincia">
+            <option>Lima</option>
+            <option>Callao</option>
+            <option>Amazonas</option>
+            <option>Áncash</option>
+            <option>Apurímac</option>
+            <option>Arequipa</option>
+            <option>Ayacucho</option>
+            <option>Cajamarca</option>
+            <option>Huancavelica</option>
+            <option>Cusco</option>
+            <option>Huánuco</option>
+            <option>Ica</option>
+            <option>Junín</option>
+            <option>Lambayeque</option>
+            <option>Tacna</option>
+            <option>Piura</option>
+            <option>Puno</option>
+            <option>Loreto</option>
+            <option>Ucayali</option>
+            <option>Madre de Dios</option>
+            <option>Moquegua</option>
+            <option>Pasco</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="distrito">Distrito</label>
+        <select class="form-control" id="distrito">
+            <option>Ancón</option>
+            <option>Ate</option>
+            <option>Barranco</option>
+            <option>Breña</option>
+            <option>Carabayllo</option>
+            <option>Chaclacayo</option>
+            <option>Chorrillos</option>
+            <option>Cieneguilla</option>
+            <option>Comas</option>
+            <option>El Agustino</option>
+            <option>Independencia</option>
+            <option>Jesús María</option>
+            <option>La Molina</option>
+            <option>La Victoria</option>
+            <option>Lima</option>
+            <option>Lince</option>
+            <option>Los Olivos</option>
+            <option>San Juan de Lurigancho</option>
+            <option>Lurín</option>
+            <option>Magdalena del Mar</option>
+            <option>Miraflores</option>
+            <option>Pachacamac</option>
+            <option>Pucusana</option>
+            <option>Pueblo Libre</option>
+            <option>Puente Piedra</option>
+            <option>Rímac</option>
+            <option>San Borja </option>
+            <option>San Isidro</option>
+            <option>San Juan de Miraflores</option>
+            <option>San Martín de Porres</option>
+            <option>San Miguel</option>
+            <option>Santa Anita</option>
+            <option>Santiago de Surco</option>
+            <option>Santa Rosa</option>
+            <option>Surquillo</option>
+            <option>Villa El Salvador</option>
+            <option>Villa María del Triunfo</option>
+            <option>Multiples</option>
+        </select>
+      </div>
+      <!-- <div class="form-group">
+        <label class="btn btn-default btn-file">
+          Subir foto <input type="file" id="foto" style="display: none;">
+        </label>
+      </div> -->
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" class="form-control" id="precio">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contraseña:</label>
+        <input type="password" name="password" class="form-control" id="pwd">
+      </div>
+      <button type="button" class="btn btn-default nuevo-a">Agregar anunciante</button>
+    </form>
+    <br>
+
+  </div>
+    {{>AgregarTienda}}
+
+  </div>
+  <div class="row">
+     <h2>Anuncios</h2>
+      <p>Lista de anuncios aprobados</p>
+       <table style="border-bottom-color: white;" class="table">
+    <thead>
+      <tr>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Nombre</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Teléfono</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Correo</th>
+        <!--<th>Color de piel</th>
+        <th>Intereses</th> -->
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Género</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Edad</th>
+        <!--<th>Color de cabello</th>
+        <th>Medidas</th> -->
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Ubicación</th>
+
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Descripcion</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Destacar</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Aprobar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each anuncios}}
+      <tr>
+        <td style="padding: 5px">{{this.nombre}}</td>
+        <td style="padding: 5px">{{this.telefono}}</td>
+        <td style="padding: 5px">{{#with getUser this.userId }} {{#each this.emails}} {{this.address}} {{/each}} {{/with}}</td>
+
+        <td style="padding: 5px">{{this.genero}}</td>
+        <td style="padding: 5px">{{this.edad}}</td>
+        <td style="padding: 5px">{{this.ubicacion}}</td>
+        <td style="padding: 5px">{{this.intereses}}</td>
+         <td style="padding: 5px">
+          <input type="checkbox" name="destacado" class="{{this._id}}" id="destacado" {{checked}}>
+        </td>
+        <td style="padding: 5px">
+          <button class="desaprobar btn btn-default">Desaprobar</button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>
+    <p>Lista de anuncios por aprobar</p>
+    <table style="border-bottom-color: white;" class="table">
+    <thead>
+      <tr>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Nombre</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Teléfono</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Correo</th>
+        <!--<th>Color de piel</th>
+        <th>Intereses</th> -->
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Género</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Edad</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Contextura</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Color de Piel</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Color de Cabello</th>
+
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Ubicación</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Provincia</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Descripcion</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Fotos</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Editar</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Aprobar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each anunciosNoAprobados}}
+      <tr>
+        <td style="padding: 5px"><input type="text" class="an{{this._id}} form-control" value="{{this.nombre}}"></td>
+        <td style="padding: 5px"><input type="text" class="at{{this._id}} form-control" value="{{this.telefono}}"></td>
+        <td style="padding: 5px"><input type="text" class="email{{this._id}} form-control" value="{{#with getUser this.userId }} {{#each this.emails}} {{this.address}} {{/each}} {{/with}}"></td>
+        <td style="padding: 5px"><input type="text" class="ag{{this._id}} form-control" value="{{this.genero}}"></td>
+        <td style="padding: 5px"><input type="text" class="ae{{this._id}} form-control" value="{{this.edad}}"></td>
+  
+        <td style="padding: 5px"><input type="text" class="acon{{this._id}} form-control" value="{{this.contextura}}"></td>
+        <td style="padding: 5px"><input type="text" class="apiel{{this._id}} form-control" value="{{this.piel}}"></td>
+        <td style="padding: 5px"><input type="text" class="acab{{this._id}} form-control" value="{{this.cabello}}"></td>
+
+        <td style="padding: 5px"><input type="text" class="au{{this._id}} form-control" value="{{this.ubicacion}}"></td>
+        <td style="padding: 5px"><input type="text" class="ap{{this._id}} form-control" value="{{this.provincia}}"></td>
+        <td style="padding: 5px"><input type="text" class="intereses {{this._id}} form-control" name="{{this._id}}" value="{{this.intereses}}"></td>
+        <td>
+          <label class="btn btn-default btn-file">
+            Subir foto <input type="file" class="f" id="foto{{this._id}}" style="display: none;">
+          </label>
+          <br>
+          {{#each fotos}}
+            <img src="{{this.url}}" style="width: 30px; height: 30px; border-radius: 70%; display: inline-block; margin: 10px auto;">
+            <span class="eliminar-foto" style="display: inline-block; margin-left: 15px"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <br>
+          {{/each}}
+        </td>
+        <td style="padding: 5px">
+          <button class="guardar-anuncio-no btn btn-primary">Guardar</button>
+        </td>
+        <td style="padding: 5px">
+          <button class="aprobar btn btn-default">Aprobar</button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>
+  </div>
+
+   <div class="row">
+     <h2>Interesados</h2>
+      <p>Lista de personas interesadas en publicar</p>
+       <table style="border-bottom-color: white;" class="table">
+    <thead>
+      <tr>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Nombre</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Teléfono</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Tipo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each interesados}}
+      <tr>
+        <td style="padding: 5px">{{this.nombre}}</td>
+        <td style="padding: 5px">{{this.telefono}}</td>
+        <td style="padding: 5px">{{this.tipo}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+     <h2>Tiendas</h2>
+      <p>Lista de tiendas registradas</p>
+       <table style="border-bottom-color: white;" class="table">
+    <thead>
+      <tr>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Nombre</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Email</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Teléfono</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Rubro</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Horario de atención</th>
+        <th>Logo</th>
+        <th style="padding: 0px; background: white; color: black; text-align: center;">Editar / Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tiendas}}
+      <tr>
+        <td style="padding: 5px"><input type="text" class="tn{{this._id}} form-control" name="nombre" value="{{this.nombre}}"></td>
+        <td style="padding: 5px">
+          <input type="text" class="tn{{this._id}} form-control" name="email-tienda{{this._id}}" value="{{email}}">
+          <button type="button" class="btn btn-default" name="change-email">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td style="padding: 5px"><input type="text" class="te{{this._id}} form-control" name="telefono" value="{{this.telefono}}"></td>
+        <td style="padding: 5px"><input type="text" class="tr{{this._id}} form-control" name="rubro" value="{{this.rubro}}"></td>
+        <td style="padding: 5px"><input type="text" class="th{{this._id}} form-control" name="horario" value="{{this.horario}}"></td>
+        <td style="padding: 5px">
+          <label class="btn btn-default btn-file">
+            Subir Logo <input type="file" class="ft" id="fototienda{{this._id}}" style="display: none;">
+          </label>
+
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary guardar-tienda">Guardar</button>
+          <button type="button" class="btn btn-danger eliminar-tienda">x</button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+    </table>
+  </div>
+
+
+</div>
+</template>
+
+<template name="Usuarios">
+
+  <div class="container">
+  <h2>Usuarios</h2>
+  <p>Lista de usuarios registrados</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Edad</th>
+        <th>Editar / Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <td><input type="text" class="n{{this._id}}" value="{{this.profile.nombre}}"></td>
+        <td><input type="text" class="e{{this._id}}" value="{{email}}"> <button type="button" name="change-email">Actualizar Email</button></td>
+        <td><input type="text" class="t{{this._id}}" value="{{this.profile.phoneNumber}}"></td>
+        <td><input type="text" class="ee{{this._id}}" value="{{this.profile.edad}}"></td>
+        <td><button type="button" class="editar">Editar</button> <button type="button" class="remove">x</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+
+</template>
+
+<template name="AdministradorContratos">
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="comment">Terminos y condiciones</label>
+          {{#if noHayTerminos}}
+            <textarea class="form-control" rows="10" id="t" name="t"></textarea>
+          {{else}}
+            {{#each terminos}}
+            <textarea class="form-control" rows="10" id="t" name="t">{{this.contenido}}</textarea>
+            {{/each}}
+          {{/if}}
+
+          <br>
+          <button class="gt btn btn-default">Guardar</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="comment">Politicas de privacidad</label>
+          {{#if noHayPoliticas}}
+          <textarea class="form-control" rows="10" id="p" name="p"></textarea>
+          {{else}}
+            {{#each politicas}}
+            <textarea class="form-control" rows="10" id="p" name="p">{{this.contenido}}</textarea>
+            {{/each}}
+          {{/if}}
+
+          <br>
+          <button class="gp btn btn-default">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="AdministradorComentarios">
+  <div class="container">
+    <div class="row">
+      <h1>Comentarios</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Anunciante</th>
+        <th>Comentario</th>
+        <th>Aprobar / Desaprobar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each comentarios}}
+      <tr>
+        <td>{{user}}</td>
+        <td>{{anunciante}}</td>
+        <td>{{comentario}}</td>
+        <td>
+          {{#if this.aprobado}}
+          <button type="button" class="desaprobar">Desaprobar</button>
+
+          {{else}}
+          <button type="button" class="aprobar">Aprobar</button>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <h1>Comentarios de Productos</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Tienda</th>
+        <th>Comentario</th>
+        <th>Aprobar / Desaprobar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each comentariosp}}
+      <tr>
+        <td>{{user}}</td>
+        <td>{{producto}}</td>
+        <td>{{comentario}}</td>
+        <td>
+          {{#if this.aprobado}}
+          <button type="button" class="desaprobarp">Desaprobar</button>
+
+          {{else}}
+          <button type="button" class="aprobarp">Aprobar</button>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+      </div>
+    </div>
+
+  </div>
+</template>

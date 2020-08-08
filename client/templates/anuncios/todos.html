@@ -1,0 +1,78 @@
+<template name="todos">
+
+  <div class="anuncios">
+  <div class="form-group" style="width: 80%; display: block; margin: 10px auto;">
+
+    <input placeholder="Busca por ejem: Miraflores" type="text" class="form-control"  name="search" style="display: block; width: 98%; margin: 0 auto; ">
+  </div>
+  <br>
+  {{#if searching}}
+      <h2>Cargando...</h2>
+  {{else}}
+    {{#each anunciantes}}
+
+        <div class="anuncio" id="{{this._id}}">
+          {{#if this.destacar}}
+
+            <div class="novedad">Anuncio Destacado</div>
+
+          {{/if}}
+          <div class="swiper-container" style="height: 97px;">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+              <!-- Slides -->
+              {{#each foto}}
+              <div class="swiper-slide">
+
+                {{#if isImage}}
+                <img src="{{this.url}}" alt="{{this.url}}" style="width: 95px; height: 95px; margin-top: 2px;">
+                {{/if}}
+
+              </div>
+              {{/each}}
+          </div>
+
+          </div>
+          <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{this.ubicacion}}</span>
+          <!--<div class="foot">
+            <span><i class="fa fa-star" aria-hidden="true"></i> {{this.calificacion}}</span>
+            <span style="width: 55px;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> {{this.precio}}</span>
+            <span><i class="fa fa-comment" aria-hidden="true"></i> {{comentarios}}</span>
+          </div> -->
+        </div>
+       {{else}}
+        <p class="alert alert-warning">No se encontró {{query}}. Lo sentimos.
+        </p>
+
+      {{/each}}
+  {{/if}}
+
+  </div>
+
+</template>
+
+
+<template name="t">
+  <div class="menu2">
+    <a href="/" style="color: white"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <span style="color: white">Términos y Condiciones de servicio</span></a>
+  </div>
+{{#each t}}
+  <p style="padding: 20px;">
+    {{this.contenido}}
+  </p>
+{{/each}}
+</template>
+
+<template name="p">
+  <div class="menu2">
+    <a href="/" style="color: white"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <span style="color: white">Políticas de privacidad</span></a>
+  </div>
+  {{#each p}}
+  <p style="padding: 20px;">
+    {{this.contenido}}
+  </p>
+
+  {{/each}}
+</template>

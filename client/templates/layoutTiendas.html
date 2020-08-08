@@ -1,0 +1,33 @@
+<template name="layoutTiendas">
+  {{#if currentUser}}
+  <div class="menu">
+    <i class="fa fa-bars abrir" aria-hidden="true"></i>
+    <i class="fa fa-user cuenta" style="width: 40px; position: relative; top: 10px;  left: 310px;" aria-hidden="true"></i>
+    <div class="lista">
+      <a href="/productos" style="width: 120px">Productos</a>
+      <a href="/tiendas"  style="width: 120px;">Tiendas</a>
+    </div>
+  </div>
+
+  <div class="sidebar  {{mostrar}}">
+  <div class="back" style="background: rgba(104, 16, 255, 0.4)">
+    <i class="fa fa-times cerrar" aria-hidden="true"></i>
+    <br>
+    <br>
+    <br>
+    <div class="sidebar-lista">
+      
+      <button class="anunciar t"><a href="/anuncios">Anuncios</a></button>
+      
+      <button class="anunciar"><a href="/productos">Tiendas</a></button>
+      <button class="anunciar panico"><a>Pánico</a></button>
+      <button class="anunciar"><a href="/anunciar">Anunciar</a></button>
+      <button class="anunciar logout"><a href="/#">Logout</a></button>
+    </div>
+  </div>
+
+  </div>
+
+  {{> Template.dynamic template=contenido}}
+  {{/if}}
+</template>
